@@ -37,15 +37,17 @@ export default Vue.extend({
           age: 23
         }
       ],
-      random: null
+      random: -1
     };
   },
   computed: {
     winner: function() {
-      return this.participants[this.random];
+      if (this.random !== null) {
+        return this.participants[this.random];
+      }
     },
     winnerName: function() {
-      return this.winner.name;
+      return this.winner && this.winner.name;
     }
   },
   methods: {
@@ -56,20 +58,20 @@ export default Vue.extend({
 });
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang='scss' scoped>
 h3 {
   margin: 40px 0 0;
 }
 
 .participants {
   display: flex;
+
+  .participant {
+    flex: 1 1 auto;
+    margin: 20px 50px;
+    border-radius: 4px;
+    border: 1px solid #4fc08d;
+  }
 }
 
-.participant {
-  flex: 1 1 auto;
-  margin: 20px 50px;
-  border-radius: 4px;
-  border: 1px solid #4fc08d;
-}
 </style>
