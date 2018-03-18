@@ -1,9 +1,4 @@
 # Tips & Tricks
-### replace the
-```html
-<!-- .element: class="fragment" -->
-```
-### with `|`
 
 ---
 
@@ -130,9 +125,21 @@ Note:
 
 ---
 
-### Profiling [Demo](https://nodesource.com) (not Enough, one more)
+### Profiling [Demo](https://nodesource.com)
+
++++
 
 ### Demo using profiler to get insights [Demo](http://www.mediapool.bg/)
-![Logo](assets.png)
-assets.png
+
+---
+
+### Network tab [demo](https://www.crunchbase.com/search/people)
+
+---
+
+### Other tools worth mentioning
+
+---
+
+Questions?
 
