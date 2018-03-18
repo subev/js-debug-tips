@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h3>{{ msg }}</h3>
+    <h2>Jackpot is ${{ jackpot | formatNumber }}</h2>
     <p>
       We randomly choose a winner to take it all!
     </p>
@@ -28,17 +29,25 @@ export default Vue.extend({
   },
   data: function () {
     return {
+      jackpot: 1000000,
       participants: [
         {
           name: 'Dragan',
-          age: 13
+          age: 13,
+          balance: 0
         },{
           name: 'Ivan',
-          age: 23
+          age: 23,
+          balance: 0
         }
       ],
       random: -1
     };
+  },
+  created() {
+    setInterval(() => {
+      this.updateJackpot();
+    }, 300);
   },
   computed: {
     winner: function() {
@@ -51,8 +60,20 @@ export default Vue.extend({
     }
   },
   methods: {
-    pickWinner: function() {
+    pickWinner() {
       this.random = Math.floor(Math.random() * this.participants.length);
+      if(this.winner) {
+        this.winner.balance += this.jackpot;
+      }
+      this.jackpot = 1000000;
+    },
+    updateJackpot() {
+      this.jackpot += Math.floor(Math.random() * 100000);
+    }
+  },
+  filters: {
+    formatNumber(value: number) {
+      return new Intl.NumberFormat().format(value);
     }
   }
 });
