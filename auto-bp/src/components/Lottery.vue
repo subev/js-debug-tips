@@ -61,11 +61,12 @@ export default Vue.extend({
   },
   methods: {
     pickWinner() {
-      this.random = Math.floor(Math.random() * this.participants.length);
-      if(this.winner) {
+      this.random = Math.random() * this.participants.length;
+
+      if (this.winner) {
         this.winner.balance += this.jackpot;
+        this.jackpot = 1000000;
       }
-      this.jackpot = 1000000;
     },
     updateJackpot() {
       this.jackpot += Math.floor(Math.random() * 100000);
