@@ -143,3 +143,20 @@ Note:
 
 Questions?
 
+---
+
+The project and the sliders are available at:
+
+##### [ github.com/subev/js-debug-tips ]( https://github.com/subev/js-debug-tips )
+Presentation slides at
+##### [ gitpitch.com/subev/js-debug-tips/master ]( https://gitpitch.com/subev/js-debug-tips/master )
+
+---
+
+Let's keep in touch in Twitter!
+#### @Subeff
+
+### Thank you!
+
+---
+
